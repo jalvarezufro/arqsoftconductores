@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>owo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="col-sm-6">
+        <form th:action="@{/save}" th:object=${conductor} method="POST"}>
+            <div class="card">
+                <div class="card-header"></div>
+                <h3> Modulo Persona</h3>
+                <div class="card-body"></div>
+                <div class="form-group">
+                    <label>id</label>
+                    <input th:field="*{id}"type="text" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input th:field="*{nombre}"type="text" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input th:field="*{apellido}"type="text" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label>RUN</label>
+                    <input th:field="*{run}"type="text" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Edad</label>
+                    <input th:field="*{edad}"type="text" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Localidad</label>
+                    <input th:field="*{localidad}"type="text" class="form-control"/>
+                </div>
+
+
+                <div class="card-footer">
+                    <input type="submit" value="Guardar" class="btn btn-success">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
