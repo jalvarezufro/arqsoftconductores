@@ -16,7 +16,7 @@ public class ConductorService implements IConductorService {
     private IConductor data;
     @Override
     public List<Conductor> listar() {
-        return (List<Conductor>)data.findAll();
+        return (List<Conductor>)  data.findAll();
     }
 
     @Override
@@ -25,18 +25,27 @@ public class ConductorService implements IConductorService {
     }
 
     @Override
-    public int save(Conductor c) {
-        int res =0;
+    public Conductor save(Conductor c) {
+
+
+
+
         Conductor conductor = data.save(c);
-        if(!conductor.equals(null)){
-            res=1;
-        }
-        return res;
+
+
+        return conductor;
     }
 
     @Override
     public void delete(int id) {
         data.deleteById(id);
+
+    }
+
+    @Override
+    public void saveOld(int id, Conductor c) {
+        Optional<Conductor> toUpdate = listarId(id);
+
 
     }
 }
